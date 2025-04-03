@@ -29,16 +29,25 @@ public class Main {
 
         System.out.println("\nЗадание 3");
 
-        double averagePayments = (total / payments.length);
+        double totalNew = 0;
+        for (int weekPayment : payments) {
+            totalNew += weekPayment;
+        }
+        double averagePayments = (totalNew / payments.length);
+
         System.out.println("Средняя сумма трат за месяц составила "+ averagePayments + " рублей" );
 
         System.out.println("\nЗадание 4");
 
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        int index = reverseFullName.length - 1;
-        for (; index >= 0; index--) {
-            System.out.print(reverseFullName[index]);
+
+        for(int i = 0; i < reverseFullName.length / 2; i++) {
+            int temporary = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - i - 1];
+            reverseFullName [reverseFullName.length - i - 1] = (char)temporary;
         }
+        System.out.println(reverseFullName);
+
 
 
     }
